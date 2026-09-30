@@ -1,0 +1,421 @@
+/*EN css utilizar escrituca snake*/
+/*Recurso con fuente descargada*/
+/*# para ID's, . para clases, * para toda la pagina, etiquetas html(body,head)*/
+@font-face{
+    font-family: 'openDescargada';
+    src: url ("../Fonts/OpenSans-Regular.ttf") format ('woff2');
+}
+/*VARIABLES Css*/
+:root{
+    --color_principal: #004b87;
+    --color_secundario: #00a859;
+    --color_obscuro: #2b2b2b;
+    --color_claro: #fff;
+    --color_fondo:#f4f7f6;
+    --color_borde: #e0e0e0;
+
+    --fuente_titulos:'Montserrat';
+    --fuente_cuerpo:'OpenDescargada';
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--color_fondo);
+    color: var(--color_obscuro);
+    line-height: 1.6;
+    font-family: var(--fuente_titulos);
+}
+
+ul{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+    font-family: var(--fuente_titulos);
+}
+header{
+    display: flex; /*default flex-direction:row*/
+    background-color: var(--color_fondo);
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.05);
+    /*menu pegajoso*/
+    top: 0;
+    position: sticky;
+    z-index:1000 ;/*preferencia de vista*/
+    padding: 15px 50px;
+}
+nav{
+    display: flex;
+}
+nav ul{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav ul a{
+    font-size: 0.95rem;/*puntos por pixeles dependiendo de la pantalla donde se vea*/
+    font: weight 600;/*bold es un100%*/
+    color: inherit; /*valor por default de padre*/
+}
+nav a:hover{
+    /*aqui tengo que regresar*/
+    color: var(--color_principal);
+}
+#logo h1{
+    color: var(--color_principal);
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+h1, h2,h3{
+    font-family: var(--fuente_titulos);
+    font-weight: 700;
+    letter-spacing:-0.5 ;/*espacio estre letras*/
+    margin-bottom: 15px;
+}
+#btn_destacado, #btn_accion{
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+#btn_destacado{
+    background-color: var(--color_principal);
+    color: var(--color_claro);
+}
+#btn_accion{
+    background-color: var(--color_secundario);
+    color: var(--color_claro);
+}
+#btn_accion:hover{
+    background-color: var(--color_principal);
+    color: var(--color_claro);
+}
+#btn_destacado:hover{
+    background-color: var(--color_principal);
+    color: var(--color_secundario);
+}
+.contenedor_principal{
+    max-width: 1200px; /*Tamaño universal para la imagen*/
+    margin: 0 auto;
+    padding: 20px;
+}
+/*Contenido principal*/
+.tec{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px; /*espacio entre palabras*/
+    padding: 60px 0;
+    flex-wrap: wrap;
+}
+
+.tec_contenido, .imagen{
+    flex: 1 1 300px;
+}
+.tec_contenido h2{
+    font-size: 2.5rem;
+    color: var(--color_principal);
+    line-height: 1.2;
+}
+.tec_contenido p{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+img{width: 100%;}
+
+
+/*GRID DEL CURSO*/
+#catalogo{
+    padding: 40px 0;
+}
+#catalogo h2{
+    color: var(--color_principal);
+    text-align: center;
+}
+.grid_cursos{
+    display: flex;
+    flex-wrap: wrap;/*RESPONSIBIDAD*/
+    gap: 20px;
+    justify-content: center;/*alinear al centro*/
+}
+.tarjeta_curso{
+    background-color: var(--color_claro);
+    border: 1px solid var(--color_borde);
+    border-radius: 8px;
+    flex: 1 1 280px; /*flex-grow: ancho elemento se hace grande o pequeño, flex-shrink encojer segun la responsabilidad, flex-basis:permite definir un tamaño de partida*/
+    max-width: 350px;/*Maximo de ancho*/
+    display: flex;/*Permite organizar segun lo que quiera columna, fila*/
+    flex-direction: column;
+    /*AQUI EFECTO*/
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /*transicion de efecto*/
+}
+.tarjeta_curso:hover{
+    transform: translateY(-5px);/*efecto de movimiento hacia arriba*/
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);/*efecto de sombra*/
+}
+.tarjeta_curso img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;/*corta la imagen para que se vea bien*/
+}
+.info_curso{
+    padding: 20px;
+    flex-grow: 1; /*permite que el contenido ocupe todo el espacio disponible*/
+    display: flex;
+    flex-direction: column;
+}
+.info_curso h3{
+    font-size: 1.3rem;
+    color: var(--color_principal);
+}
+.info_curso p{
+    margin-bottom: 15px;
+    flex-grow: 1; /*permite que el contenido ocupe todo el espacio disponible*/
+    color: var(--color_obscuro);
+}
+.nivel{
+    background-color: var(--color_fondo);
+    color: var(--color_principal);
+    font-family: var(--fuente_titulos);
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: flex-start; /*alinear al inicio del contenedor*/
+}
+
+/*footer*/
+footer{
+    background-color: var(--color_obscuro);
+    color: var(--color_claro);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+ 
+/*contenedor de Inscripciones*/
+.contenedor {
+    max-width: 900px;
+    margin: 40px auto;
+    background: var(--color_claro);
+    padding: 30px;
+    border-radius: 12px;
+    border: 3px solid var(--color_principal);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    color: var(--color_obscuro);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 2px solid var(--color_borde);
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color : var(--color_secundario);
+    outline: none;
+}
+
+button {
+    background-color: var(--color_secundario);
+    color: var(--color_claro);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 18px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--color_principal);
+}
+.reglas_mentoria{/*Estilo para la lista de reglas */
+    list-style: disc;
+    padding-left: 25px;
+    margin-top: 15px;
+}
+.reglas_mentoria li{
+    margin-bottom: 10px;
+}   
+.seccion_mentoria{
+    margin-top: 30px;
+    padding: 25px;
+    background-color: var(--color_claro);
+    border: 1px solid var(--color_borde);
+    border-radius: 10px;
+}
+.seccion_mentoria h2{
+    color: var(--color_principal);
+    margin-bottom: 12px;
+}
+.seccion_mentoria p{
+    margin-bottom: 15px;
+}
+.contenedor_principal h1{
+    color: var(--color_principal);
+}
+.contenedor_principal p{
+    margin-bottom: 15px;
+}
+.video_responsivo{
+    width: 100%;
+    aspect-ratio: 16/9; /* Relación de aspecto 16:9 */
+    margin-top: 20px;
+}
+.video_responsivo iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+/* CATALOGO DE CURSOS */
+#catalogo_cursos {
+    padding: 40px 0;
+}
+#catalogo_cursos > h1 {
+    text-align: center;
+    color: var(--color_principal);
+}
+.descripcion_cursos {
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* CUADRICULA */
+.grid_cursos_nueva {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+/* TARJETA */
+.tarjeta_curso_nueva {
+    background-color: var(--color_claro);
+    border: 1px solid var(--color_borde);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.tarjeta_curso_nueva:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+/* IMAGEN */
+.tarjeta_curso_nueva > img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+/* INFORMACION */
+.info_curso_nueva {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+/* INSTITUCION */
+.institucion img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+.institucion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.institucion span {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+/* INSTRUCTOR */
+.instructor {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+/* TITULO */
+.info_curso_nueva h2 {
+    color: var(--color_principal);
+    font-size: 1.2rem;
+    min-height: 58px;
+    margin-bottom: 10px;
+}
+/* ESTRELLAS */
+.estrellas {
+    color: #e6a700;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+/* NIVEL Y TIPO */
+.metadatos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.metadatos span {
+    background-color: var(--color_fondo);
+    color: var(--color_principal);
+    padding: 5px 9px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+/* BOTON */
+.btn_curso {
+    display: block;
+    margin-top: auto;
+    background-color: var(--color_secundario);
+    color: var(--color_claro);
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+.btn_curso:hover {
+    background-color: var(--color_principal);
+}
+@media(max-width: 600px){
+    .grid_cursos_nueva{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 600px){
+    .grid_cursos_nueva{
+        grid-template-columns: 1fr;
+    }
+    header{
+        padding: 15px 20px;
+        flex-direction: column;
+        gap : 15px;
+    }
+    nav ul{
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+}

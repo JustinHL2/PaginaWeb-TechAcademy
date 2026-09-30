@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/miEstilo0.css">
+    <title>TechAcademy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><!--Tipografia: Google fonts: select letra, presiona get fontm, presiona get embed code-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Encabezado-->
+    <header>
+        <div id="logo">
+            <H1>TechAcademy</H1>
+        </div>
+        <nav class="navPrincipal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="mentoria.html">Mentoria</a></li>
+                <li><a href="inscripcion.html"id="btn_destacado">Inscribirse</a></li><!--identificador-->
+            </ul>
+        </nav>
+    </header>
+    <!--CONTENIDO PRINCIPAL-->
+    <main class="contenedor_principal">
+        <section class="tec"><!--Contenido que acompaña a las imagenes-->
+            <section class="tec_contenido">
+        <h2>Aprende las tecnologias del futuro, hoy.</h2>
+        <p>Cursos prácticos liderador por expertos de la industria</p>
+        <a href="cursos.html" id="btn_accion">Ver Catálogo</a>
+            </section>
+        <section class="imagen">
+            <img src="images/img1.jpg" alt="Estudiante programando">
+        </section>
+        </section>
+
+        <section id="catalogo"> 
+            <h2>Nuestra oferta educativa</h2>
+            <div class ="grid_cursos">
+              <article class="tarjeta_curso">
+                <img src="images/img2.jpg" alt="Frontend">
+                <div class="info_curso">
+                    <h3>Desarrollo Web Frontend </h3>
+                    <p>Domina HTML5 semántico, CSS3, FlexBox y JavaScript interactivo</p>
+                    <span class="nivel">Principiante</span>
+                </div>
+              </article>  
+              <article class="tarjeta_curso">
+                <img src="images/img3.jpg" alt="Phyton">
+                     <div class="info_curso">
+                    <h3>Phyton para Ciencia de datos</h3>
+                    <p>Analisis de datos estructurados, visualización y machine learning</p>
+                    <span class="nivel">Intermedio</span>
+                     </div>
+              </article>
+                <article class="tarjeta_curso">
+                    <img src="images/img4.jpg" alt="Bases de datos">
+                    <div class="info_curso">
+                        <h3>Bases de datos robustas</h3>
+                        <p>Diseño SQL relacional, llaves foraneas y normalización</p>
+                        <span class="nivel">Principiante</span>
+                    </div>
+                </article>
+                <article class="tarjeta_curso">
+                <img src="images/img5.jpg" alt="Backend con APIs">
+                     <div class="info_curso">
+                    <h3>Programacion Backend con APIs</h3>
+                    <p>Programacion con APIs</p>
+                    <span class="nivel">Avanzado</span>
+                     </div>
+              </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 TechAcademy</p>
+</body>
+</html>
